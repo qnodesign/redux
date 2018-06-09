@@ -1,7 +1,7 @@
 import React from "react";
 
-const Tweet = ({ tweet, key }) => {
-  return <li key={key}>{tweet && tweet.title}</li>;
+const Tweet = ({ tweet }) => {
+  return <li>{tweet && tweet.title}</li>;
 };
 
 const Tweets = ({ tweets }) => {

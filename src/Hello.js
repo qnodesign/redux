@@ -1,6 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
-import { fetchUser, fetchTweets } from "./action";
+import { fetchUser } from "./action";
 import User from "./user";
 import Tweets from "./tweets";
 
@@ -10,11 +10,6 @@ const Hello = ({ user, tweets }) => {
       <button onClick={fetchUser}>fetch user</button>
       <br />
       <User user={user} />
-      {user && user.id ? (
-        <button onClick={() => fetchTweets(user.id)}>fetch tweets</button>
-      ) : (
-        ""
-      )}
       <Tweets tweets={tweets} />
     </div>
   );

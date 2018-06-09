@@ -1,5 +1,6 @@
 import { createStore, applyMiddleware } from "redux";
 import promise from "redux-promise-middleware";
+import thunk from "redux-thunk";
 
 const reducer = (state = {}, action) => {
   switch (action.type) {
@@ -19,6 +20,6 @@ const reducer = (state = {}, action) => {
   }
 };
 
-const middleware = applyMiddleware(promise());
+const middleware = applyMiddleware(thunk, promise());
 
 export default createStore(reducer, middleware);
