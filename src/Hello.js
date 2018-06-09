@@ -1,20 +1,25 @@
 import React from "react";
 import { connect } from "react-redux";
 import { fetchUser } from "./action";
+import User from "./user";
+import Tweets from "./tweets";
 
-const Hello = ({ name, user }) => {
+const Hello = ({ user, tweets }) => {
   return (
     <div>
-      <User />
       <button onClick={fetchUser}>fetch user</button>
+      <br />
+      <User user={user} />
+      <Tweets tweets={tweets} />
     </div>
   );
 };
 
 const mstp = state => {
   return {
-    user: state.user
+    user: state.user,
+    tweets: state.tweets
   };
 };
 
-export default Hello;
+export default connect(mstp)(Hello);
